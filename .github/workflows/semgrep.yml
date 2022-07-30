@@ -23,6 +23,11 @@ jobs:
           path: "semgrep-rules"
           ssh-key: ${{ secrets.semgrep_rules_deploy_key }}
 
-      - run: semgrep ci
+      - run: semgrep ci --sarif --output=semgrep.sarif
         env:
           SEMGREP_RULES: ${{ github.workspace }}/semgrep-rules/rules
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: semgrep.sarif
+          path: semgrep.sarif
