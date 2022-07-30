@@ -20,6 +20,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: Ayrx/semgrep-rules
+          ssh-key: ${{ secrets.semgrep_rules_deploy_key }}
 
       - run: semgrep ci
         env:
