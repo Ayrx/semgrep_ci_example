@@ -27,8 +27,8 @@ jobs:
         env:
           SEMGREP_RULES: ${{ github.workspace }}/semgrep-rules/rules
 
-      if: always()
-      - uses: actions/upload-artifact@v3
+      - if: always()
+        uses: actions/upload-artifact@v3
         with:
           name: semgrep.sarif
           path: semgrep.sarif
