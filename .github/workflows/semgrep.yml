@@ -27,6 +27,11 @@ jobs:
         env:
           SEMGREP_RULES: ${{ github.workspace }}/semgrep-rules/rules
 
+      - if: failure()
+        uses: Ayrx/sarif_to_github_annotations
+        with:
+          args: semgrep.sarif
+
       - if: always()
         uses: actions/upload-artifact@v3
         with:
