@@ -13,7 +13,7 @@ jobs:
     container:
       image: returntocorp/semgrep
       volumes:
-        - ./semgrep-rules:/semgrep-rules
+        - ${{ github.workspace }}/semgrep-rules:/semgrep-rules
 
     if: (github.actor != 'dependabot[bot]')
     steps:
