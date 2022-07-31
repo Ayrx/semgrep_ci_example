@@ -14,7 +14,7 @@ window.eval(user_input)
 var x = Function('a', 'b', 'return 1')
 
 // ruleid: eval-with-expression
-var x = Function('a', 'b', user_input)
+var x = Function('a', 'b', "return 2")
 
 // ok: eval-with-expression
 var x = new Function('a', 'b', 'return 1')
