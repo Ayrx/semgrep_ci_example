@@ -28,7 +28,7 @@ jobs:
           SEMGREP_RULES: ${{ github.workspace }}/semgrep-rules/rules
 
       - if: failure()
-        uses: Ayrx/sarif_to_github_annotations@52b78b8fe9585da058644b357b14e77e886d7f93
+        uses: Ayrx/sarif_to_github_annotations@781a1885ee955215131cc37d737ab3f048db3b02
         with:
           sarif_file: semgrep.sarif
 
