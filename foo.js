@@ -31,4 +31,3 @@ eval(`return ${funcName}(a,b)`)
 var f = "return 1"
 // ok: eval-with-expression
 var x = new Function('a', 'b', f)
-
