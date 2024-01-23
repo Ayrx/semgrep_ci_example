@@ -21,8 +21,7 @@ jobs:
         with:
           repository: Ayrx/semgrep-rules
           path: "semgrep-rules"
-          ssh-key: ${{ secrets.semgrep_rules_deploy_key }}
-
+          
       - run: semgrep ci --sarif --output=semgrep.sarif
         env:
           SEMGREP_RULES: ${{ github.workspace }}/semgrep-rules/rules
